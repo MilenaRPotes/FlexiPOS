@@ -13,13 +13,60 @@
 
     <Border CornerRadius="10" Background="GhostWhite">
         <Grid Name="Primary" Background="Transparent">
-            <!--#REGION  HEADER-->
+            <!--#region HEADER -->
             <Grid Height="35" Name="Header" VerticalAlignment="Top" Background="Transparent">
                 <Border CornerRadius="10, 10,0,0"
-                        Background="#2C3E50"></Border>
-                
+                        Background="#0472B3"></Border>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="220"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <!--#region TITLE -->
+                    <TextBlock Text="FlexiPOS Store"
+                        Grid.Column="0"
+                        Foreground="Black"
+                        FontSize="15"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                        
+                    </TextBlock>             
+                    <!--#endregion-->
+
+                    <!--#region MY ACCOUNT -->
+                    <Button x:Name="BtnAccount"
+                            Grid.Column="1"
+                            Background="Transparent"
+                            FontSize="15"
+                            Foreground="Black"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Cursor="Hand">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="1"
+                                       Text="My Account"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="5,0,0,0"></TextBlock>
+                            <Image Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Source="/Resources/IMG/setting.png"></Image>
+                        </Grid>
+                    </Button>
+                    <!--#endregion-->
+
+                </Grid>
+
             </Grid>
-            <!--#END REGION-->
+          
+            <!--#endregion-->
         </Grid>
     </Border>
     
