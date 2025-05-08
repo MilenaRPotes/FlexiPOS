@@ -97,5 +97,32 @@
   <ItemGroup>
     <Resource Include="Resources\IMG\Setting.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\POS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\Products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG\minimize.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
