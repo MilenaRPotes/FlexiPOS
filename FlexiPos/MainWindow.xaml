@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FlexiPos"
+        xmlns:local="clr-namespace:FlexiPos" 
+        xmlns:viewmodels="clr-namespace:FlexiPos.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -47,7 +48,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Border CornerRadius="6" x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -238,6 +239,15 @@
 
         <!--#endregion-->
 
+        <!--#region DATATEMPLATE USERS -->
+        <DataTemplate x:Name="Userxaml"
+                      DataType="{x:Type viewmodels:Usersxaml}">
+            <viewmodels:Usersxaml DataContext="{Binding}"/>
+
+        </DataTemplate>
+        <!--#endregion-->
+
+
     </Window.Resources>
 
 
@@ -372,11 +382,12 @@
                  Height="565"
                  Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftBottonDown">
                 <Border CornerRadius="0,0,0,10"
-           Background="#909094"/>
+                        Background="#909094"/>
                 <TextBlock Text="FlexiPos"
               VerticalAlignment="Center"
               HorizontalAlignment="Center"
               FontSize="50"/>
+                <ContentControl Content="{Binding}"></ContentControl>
             </Grid>
 
             <!--#endregion-->
@@ -561,7 +572,7 @@
                                   HorizontalAlignment="Left"
                                   Cursor="Hand"
                                   Background="Transparent"
-                                  BorderBrush="Transparent">
+                                  BorderBrush="Transparent" Click="Users_Click">
 
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
