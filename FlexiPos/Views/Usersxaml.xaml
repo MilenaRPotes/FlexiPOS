@@ -203,11 +203,25 @@
             <Setter Property="Height" Value="20"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
         </Style>
+        <Style TargetType="{x:Type DataGridCell}">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#A9D3FF"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#A9D3FF"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
         <!--#endregion-->
     </UserControl.Resources>
     
     
-    <!--#region CONTENT -->
+<!--#region CONTENT -->
     <Border CornerRadius="10"
             Background="#909094">
         <Grid x:Name="GridUsers">
@@ -316,6 +330,28 @@
                             <DataTemplate>
                                 <DockPanel>
                                     <!--Creation of buttons for CRUD-->
+                                    <!--Consultar-->
+                                    <Button Content="Read" 
+                                            x:Name="BtnRead"
+                                            Background="#0472B3"
+                                            Width="80"
+                                            BorderBrush="Transparent"
+                                            Foreground="White"
+                                            Style="{DynamicResource ButtonSearchStyle}"></Button>
+                                    <Button Content="Update" 
+                                            x:Name="BtnUpdate"
+                                            Background="#0472B3"
+                                            Width="80"
+                                            BorderBrush="Transparent"
+                                            Foreground="White"
+                                            Style="{DynamicResource ButtonSearchStyle}"></Button>
+                                    <Button Content="Delete" 
+                                            x:Name="BtnDelete"
+                                            Background="#0472B3"
+                                            Width="80"
+                                            BorderBrush="Transparent"
+                                            Foreground="White"
+                                            Style="{DynamicResource ButtonSearchStyle}"></Button>       
 
 
                                 </DockPanel>
@@ -323,22 +359,28 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="ID"
-                                        Width="50">
+                                        Width="50"
+                                        Binding="{Binding IdUser}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Names"
-                                        Width="100">
+                                        Width="100"
+                                        Binding="{Binding Names}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Last Names"
-                                        Width="100">
+                                        Width="100"
+                                        Binding="{Binding LastNames}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Phone"
-                                        Width="100">
+                                        Width="100"
+                                        Binding="{Binding Phone}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Email"
-                                        Width="*">
+                                        Width="*"
+                                        Binding="{Binding Email}">
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Privilege"
-                                        Width="*">
+                                        Width="*"
+                                        Binding="{Binding NamePrivilege}">
                     </DataGridTextColumn>
 
                 </DataGrid.Columns>
@@ -354,7 +396,7 @@
 
         </Grid>
     </Border>
-    <!--#endregion-->
+<!--#endregion-->
 
    
     
